@@ -7,7 +7,7 @@ import okhttp3.CacheControl
 import org.jsoup.nodes.Element
 import java.util.concurrent.TimeUnit.MINUTES
 
-class Ryuanime : HttpSource() {
+class RyuAnime : HttpSource() {
 
     private val cache = CacheControl.Builder().maxAge(10, MINUTES).build()
 

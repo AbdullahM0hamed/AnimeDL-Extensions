@@ -1,0 +1,5 @@
+dependencies {
+    compileOnly project(":stubs")
+    compileOnly "org.jsoup:jsoup:1.13.1"
+    compileOnly "com.squareup.okhttp3:okhttp:4.10.0-RC1"
+}
