@@ -1,0 +1,9 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+ext {
+    extName = 'RyuAnime'
+    extVersion = 1
+}
+
+apply: "$rootDir/common.gradle"
