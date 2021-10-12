@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName '1.2'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    compileOnly "com.squareup.okhttp3:okhttp:4.9.1"
+    compileOnly "org.jsoup:jsoup:1.13.1"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0"
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
