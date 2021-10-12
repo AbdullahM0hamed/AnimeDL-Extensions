@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 
 ext {
     extName = 'RyuAnime'
+    extClass = '.RyuAnime'
     extVersionCode = 1
 }
 
