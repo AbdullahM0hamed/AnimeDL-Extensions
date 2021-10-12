@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 ext {
     extName = 'RyuAnime'
-    extVersion = 1
+    extVersionCode = 1
 }
 
 apply from: "$rootDir/common.gradle"
