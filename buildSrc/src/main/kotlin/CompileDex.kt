@@ -8,7 +8,7 @@ import com.android.builder.dexing.DexParameters
 import com.android.builder.dexing.r8.ClassFileProviderFactory
 import com.google.common.io.Closer
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.internal.project.DefaultProject
+import org.gradle.api.internal.project.DefaultProject_Decorated
 import org.slf4j.LoggerFactory
 import java.io.File
 import java.nio.file.Path
@@ -16,7 +16,7 @@ import java.util.Arrays
 import java.util.stream.Collectors
 
 object CompileDex {
-    fun compile(project: DefaultProject) {
+    fun compile(project: DefaultProject_Decorated) {
         val input: ConfigurableFileCollection = project.objects.fileCollection()
         val android = project.extensions.getByName("android") as BaseExtension
         val dexOutputDir = project.buildDir.resolve("outputs")
