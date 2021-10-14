@@ -1,0 +1,1 @@
+/data/data/com.termux/files/home/AnimeDL-Extensions/buildSrc/build/classes/kotlin/main/CompileDex$compile$1$1.class:/data/data/com.termux/files/home/AnimeDL-Extensions/buildSrc/build/classes/kotlin/main/CompileDex$compile$1$fileStreams$1$1$1.class:/data/data/com.termux/files/home/AnimeDL-Extensions/buildSrc/build/classes/kotlin/main/CompileDex.class
