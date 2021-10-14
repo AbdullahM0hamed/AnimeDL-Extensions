@@ -11,6 +11,7 @@ import org.gradle.api.Project
 import org.gradle.api.file.ConfigurableFileCollection
 import org.slf4j.LoggerFactory
 import java.io.File
+import java.util.Arrays
 import java.util.stream.Collectors
 
 object CompileDex {
