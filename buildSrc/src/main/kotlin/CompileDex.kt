@@ -22,7 +22,7 @@ object CompileDex {
         buildDir: File,
         objects: ObjectFactory
     ) {
-        val input: ConfigurableFileCollecroject.objects.fileCollection()
+        val input = objects.fileCollection()
         val android = extensions.getByName("android") as BaseExtension
         val dexOutputDir = buildDir.resolve("outputs")
 
