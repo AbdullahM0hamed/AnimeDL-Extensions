@@ -1,7 +1,5 @@
 package com.anime.dl.sources
 
-import com.anime.dl.App
-import com.anime.dl.R
 import com.anime.dl.sources.models.AnimeInfo
 import com.anime.dl.sources.models.AnimePage
 import com.anime.dl.sources.models.EpisodeInfo
@@ -12,7 +10,7 @@ class TestSource : HttpSource() {
 
     override val id = 0L
 
-    override val name = App.applicationContext().getString(R.string.tutorial_source)
+    override val name = "TestSource"
 
     override val lang = "all"
 
