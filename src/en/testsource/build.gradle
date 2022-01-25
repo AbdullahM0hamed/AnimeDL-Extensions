@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 ext {
-    extName = 'RyuAnime'
-    extClass = '.RyuAnime'
+    extName = 'TestSource'
+    extClass = '.TestSource'
     extVersionCode = 1
 }
 
