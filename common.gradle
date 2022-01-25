@@ -69,6 +69,6 @@ lintKotlin.dependsOn(formatKotlin)
 tasks.register("compileDex") {
     actions.clear()
     doLast {
-        CompileDex.compile(project)
+        CompileDex.compile(project.extensions, project.buildDir, project.objects)
     }
 }

@@ -8,7 +8,8 @@ import com.android.builder.dexing.DexParameters
 import com.android.builder.dexing.r8.ClassFileProviderFactory
 import com.google.common.io.Closer
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.internal.project.DefaultProject
+import org.gradle.api.model.ObjectFactory
+import org.gradle.api.plugins.ExtensionContainer
 import org.slf4j.LoggerFactory
 import java.io.File
 import java.nio.file.Path
@@ -16,10 +17,14 @@ import java.util.Arrays
 import java.util.stream.Collectors
 
 object CompileDex {
-    fun compile(project: DefaultProject) {
-        val input: ConfigurableFileCollection = project.objects.fileCollection()
-        val android = project.extensions.getByName("android") as BaseExtension
-        val dexOutputDir = project.buildDir.resolve("outputs")
+    fun compile(
+        extensions: ExtensionContainer,
+        buildDir: File,
+        objects: ObjectFactory
+    ) {
+        val input: ConfigurableFileCollecroject.objects.fileCollection()
+        val android = extensions.getByName("android") as BaseExtension
+        val dexOutputDir = buildDir.resolve("outputs")
 
         Closer.create().use { closer ->
             val dexBuilder = DexArchiveBuilder.createD8DexBuilder(
