@@ -71,4 +71,4 @@ lintKotlin.dependsOn(formatKotlin)
     //doLast {
         //CompileDex.compile(project.extensions, project.buildDir, project.objects)
     //}
-}
+//}

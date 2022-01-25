@@ -38,7 +38,7 @@ jobs:
 
       - name: Build app
         run: |
-          ./gradlew compileDex
+          ./gradlew assembleRelease
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
