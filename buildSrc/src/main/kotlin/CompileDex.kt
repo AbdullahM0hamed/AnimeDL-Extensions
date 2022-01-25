@@ -16,11 +16,14 @@ import java.nio.file.Path
 import java.util.Arrays
 import java.util.stream.Collectors
 
+import org.gradle.internal.extensibility.DefaultConvention
+import org.gradle.api.internal.model.DefaultObjectFactory
+
 object CompileDex {
     fun compile(
-        extensions: ExtensionContainer,
+        extensions: DefaultConvention,
         buildDir: File,
-        objects: ObjectFactory
+        objects: DefaultObjectFactory
     ) {
         val input = objects.fileCollection()
         val android = extensions.getByName("android") as BaseExtension
