@@ -37,11 +37,17 @@ jobs:
           java-version: 1.8
 
       - name: Build app
+        uses: montudor/action-zip@v1
         run: |
           ./gradlew assembleRelease
+
+          for ext in src/*/*
+          do
+            unzip -qq $ext/build/outputs/apk/*/*apk -d $ext/class
+          done
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
           name: AnimeDL-Extensions
-          path: .
+          path: src/*/*/class/classes.dex
