@@ -36,8 +36,10 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Build app
+      - name: Install zip
         uses: montudor/action-zip@v1
+
+      - name: Build app
         run: |
           ./gradlew assembleRelease
 
