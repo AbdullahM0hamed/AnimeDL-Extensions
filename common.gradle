@@ -66,9 +66,9 @@ apply from: "$rootDir/common-dependencies.gradle"
 preBuild.dependsOn(lintKotlin)
 lintKotlin.dependsOn(formatKotlin)
 
-tasks.register("compileDex") {
-    actions.clear()
-    doLast {
-        CompileDex.compile(project.extensions, project.buildDir, project.objects)
-    }
+//tasks.register("compileDex") {
+    //actions.clear()
+    //doLast {
+        //CompileDex.compile(project.extensions, project.buildDir, project.objects)
+    //}
 }
