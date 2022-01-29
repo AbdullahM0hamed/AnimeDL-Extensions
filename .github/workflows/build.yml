@@ -36,14 +36,16 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Install zip
-        uses: montudor/action-zip@v1
+      - name: Checkout repo branch
+        uses: actions/checkout@v2
+        with:
+          ref: repo
+          path: repo
 
       - name: Build app
         run: |
           ./gradlew assembleRelease
-          git clone --branch repo https://github.com/AbdullahM0hamed/AnimeDL-Extensions
-          cd AnimeDL-Extensions
+          cd repo
           rm -rf *
           mv $(find .. -name "*.apk") $PWD
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
