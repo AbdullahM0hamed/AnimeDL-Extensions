@@ -46,9 +46,5 @@ jobs:
           cd AnimeDL-Extensions
           rm -rf *
           mv $(find .. -name "*.apk") $PWD
-
-      - name: Commit & Push changes
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: repo
+          git commit -m "Update extensions"
+          git push https://AbdullahM0hamed:$TOKEN@github.com/AnimeDL-Extensions repo
