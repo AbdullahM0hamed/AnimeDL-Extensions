@@ -50,4 +50,4 @@ jobs:
           git config --global user.name github-actions[bot]
           git add .
           git commit -m "Update extensions"
-          git push https://AbdullahM0hamed:$TOKEN@github.com/AnimeDL-Extensions repo
+          git push https://AbdullahM0hamed:$TOKEN@github.com/AbdullahM0hamed/AnimeDL-Extensions repo
