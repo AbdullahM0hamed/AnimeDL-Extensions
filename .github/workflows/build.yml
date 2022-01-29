@@ -46,8 +46,8 @@ jobs:
           cd AnimeDL-Extensions
           rm -rf *
           mv $(find .. -name "*.apk") $PWD
-          git config --global user.email github-actions[bot]@users.noreply.github.com
-          git config --global user.name github-actions[bot]
+          git config --global user.email 25087116+AbdullahM0hamed@users.noreply.github.com
+          git config --global user.name AbdullahM0hamed
           git add .
           git commit -m "Update extensions"
           git push https://AbdullahM0hamed:$TOKEN@github.com/AbdullahM0hamed/AnimeDL-Extensions repo
