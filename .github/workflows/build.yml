@@ -45,9 +45,7 @@ jobs:
           git clone --branch repo https://github.com/AbdullahM0hamed/AnimeDL-Extensions
           cd AnimeDL-Extensions
           rm -rf *
-          cd ..
-          mv $(find -name ".*apk") AnimeDL-Extensions
-          cd AnimeDL-Extensions
+          mv $(find .. -name ".*apk") .
 
       - name: Commit & Push changes
         uses: actions-js/push@master
