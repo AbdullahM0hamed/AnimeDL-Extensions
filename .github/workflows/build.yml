@@ -42,14 +42,15 @@ jobs:
       - name: Build app
         run: |
           ./gradlew assembleRelease
+          git clone --branch repo https://github.com/AbdullahM0hamed/AnimeDL-Extensions
+          cd AnimeDL-Extensions
+          rm -rf *
+          cd ..
+          mv $(find -name ".*apk") AnimeDL-Extensions
+          cd AnimeDL-Extensions
 
-          for ext in src/*/*
-          do
-            unzip -qq $ext/build/outputs/apk/*/*apk -d $ext/class
-          done
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+      - name: Commit & Push changes
+        uses: actions-js/push@master
         with:
-          name: AnimeDL-Extensions
-          path: src/*/*/class/classes.dex
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: repo
