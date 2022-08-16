@@ -6,4 +6,4 @@ ext {
     extVersion = 1
 }
 
-apply: "$rootDir/common.gradle"
+apply "$rootDir/common.gradle"
