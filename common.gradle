@@ -27,7 +27,7 @@ android {
         minSdkVersion AndroidConfig.minSdk
         targetSdkVersion AndroidConfig.targetSdk
         applicationIdSuffix extName
-        versionCode extVersionCode
+        versionCode versionCode
         setProperty("archivesBaseName", "animedl-$extName-v$versionCode")
         manifestPlaceholders = [
                 appName : "AnimeDL: $extName",
