@@ -1,0 +1,55 @@
+name: Build App
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  check_wrapper:
+    name: Validate Gradle Wrapper
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+  build:
+    name: Build extensions
+    needs: check_wrapper
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.5.0
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Checkout repo branch
+        uses: actions/checkout@v2
+        with:
+          ref: repo
+          path: repo
+
+      - name: Build app
+        run: |
+          ./gradlew assembleRelease
+          cd repo
+          rm -rf *
+          mv $(find .. -name "*.aar") $PWD
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add .
+          git commit -m "Update extensions"
+          git push
