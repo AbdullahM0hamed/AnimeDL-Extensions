@@ -44,7 +44,7 @@ jobs:
 
       - name: Build app
         run: |
-          ./gradlew assembleRelease
+          ./gradlew assembleRelease --stacktrace
           cd repo
           rm -rf *
           mv $(find .. -name "*.aar") $PWD
