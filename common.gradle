@@ -9,19 +9,19 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            manifest.srcFile "$rootDir/stubs/src/main/AndroidManifest.xml"
-            java.srcDirs = ['src']
-            res.srcDirs = ['res']
-        }
-        release {
-            manifest.srcFile "AndroidManifest.xml"
-        }
-        debug {
-            manifest.srcFile "AndroidManifest.xml"
-        }
-    }
+    //sourceSets {
+        //main {
+            //manifest.srcFile "$rootDir/stubs/src/main/AndroidManifest.xml"
+            //java.srcDirs = ['src']
+            //res.srcDirs = ['res']
+        //}
+        //release {
+            //manifest.srcFile "AndroidManifest.xml"
+        //}
+        //debug {
+            //manifest.srcFile "AndroidManifest.xml"
+        //}
+    //}
 
     defaultConfig {
         minSdkVersion 21
@@ -52,9 +52,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    //kotlinOptions {
-        //jvmTarget = JavaVersion.VERSION_1_8.toString()
-    //}
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 repositories {
